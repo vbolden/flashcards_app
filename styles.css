@@ -33,11 +33,10 @@ header h1 {
 }
 
 aside {
-    width: 50%;
+    flex: 1;
     height: fit-content;
     padding: 1.5rem;
     border-radius: 12px;
-    height: fit-content;
 }
 
 aside h2 {
@@ -139,11 +138,24 @@ main h2 {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     width: 50%;
     height: 100px;
 }
 
+.card-front {
+    font-weight: 600;
+    color: #333;
+    justify-self: center;
+    align-self: center;
+}
+
+.card-back {
+    font-weight: 600;
+    color: #333;
+    justify-self: center;
+    align-self: center;
+}
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
