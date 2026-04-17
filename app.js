@@ -1,0 +1,89 @@
+const newDeckBtn = document.getElementById('newDeckBtn');
+const decksList = document.getElementById('decksList');
+
+newDeckBtn.addEventListener('click', () => {
+    const newDeckName  = document.createElement('li');
+    newDeckName.classList.add('modal');
+    newDeckName.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Deck</h2>
+            <input type="text" id="deckNameInput" placeholder="Enter deck name">
+            <button id="createDeckBtn">Create</button>
+        </div>
+    `;
+    document.body.appendChild(newDeckName);
+
+    const closeBtn = newDeckName.querySelector('.close');
+    closeBtn.addEventListener('click', () => {
+        document.body.removeChild(newDeckName);
+    });
+
+    const createDeckBtn = newDeckName.querySelector('#createDeckBtn');
+    createDeckBtn.addEventListener('click', () => {
+       const deckName = document.getElementById('deckNameInput').value.trim().toUpperCase();
+         if (deckName) {
+            const deckItem = document.createElement('li');
+            deckItem.innerHTML = `
+            <div id="deckView" class="deck-view">
+                    <div class="deck-header">
+                        <div>
+                            <h2 id="deckTitle">${deckName}</h2>
+                            <p id="deckCardCount" class="card-count"></p>
+                        </div>
+                        <div class="deck-actions">
+                            <button id="editDeckBtn">Edit</button>
+                            <button id="studyBtn">Study</button>
+                            <button id="deleteDeckBtn">Delete</button>
+                            <button id="newCardBtn">+ New Card</button>
+                        </div>
+                    </div>
+
+                    <div class="cards-container">
+                        <div class="cards-list" id="cardsList"></div>
+                    </div>
+                </div>`;
+        decksList.appendChild(deckItem);
+        document.body.removeChild(newDeckName);
+        }
+        
+        const newCardBtn = document.getElementById('newCardBtn');
+        newCardBtn.addEventListener('click', () => {
+            const newCardModal = document.createElement('div');
+            newCardModal.classList.add('modal');
+            newCardModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Create New Card</h2>
+                    <input type="text" id="frontInput" placeholder="Front of card">
+                    <input type="text" id="backInput" placeholder="Back of card">
+                    <button id="createCardBtn">Create</button>
+                </div>
+            `;
+            document.body.appendChild(newCardModal);
+
+            const closeBtn = newCardModal.querySelector('.close');
+            closeBtn.addEventListener('click', () => {
+                document.body.removeChild(newCardModal);
+            });
+
+            const createCardBtn = newCardModal.querySelector('#createCardBtn');
+            createCardBtn.addEventListener('click', () => {
+                const frontText = document.getElementById('frontInput').value.trim();
+                const backText = document.getElementById('backInput').value.trim();
+                if (frontText && backText) {
+                    const cardItem = document.createElement('div');
+                    cardItem.classList.add('card-item');
+                    cardItem.innerHTML = `
+                        <div class="card-front">${frontText}</div>
+                        <div class="card-back" hidden>${backText}</div>
+                    `;
+                    const cardsList = document.getElementById('cardsList');
+                    cardsList.appendChild(cardItem);
+                    document.body.removeChild(newCardModal);
+                }
+            });
+        });
+            
+    });
+});

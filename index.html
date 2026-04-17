@@ -29,36 +29,6 @@
 
             <!-- Main Content: Deck View or Study Mode -->
             <section class="main-content">
-                <!-- Empty State -->
-                <div id="emptyState" class="empty-state">
-                    <p>Select or create a deck to get started</p>
-                </div>
-
-                <!-- Deck View -->
-                <div id="deckView" class="deck-view" hidden>
-                    <div class="deck-header">
-                        <div>
-                            <h2 id="deckTitle"></h2>
-                            <p id="deckCardCount" class="card-count"></p>
-                        </div>
-                        <div class="deck-actions">
-                            <button id="editDeckBtn" class="btn btn-secondary">Edit</button>
-                            <button id="studyBtn" class="btn btn-primary">Study</button>
-                            <button id="deleteDeckBtn" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-
-                    <div class="search-bar">
-                        <label for="searchInput">Search cards:</label>
-                        <input type="text" id="searchInput" placeholder="Search by front or back text...">
-                    </div>
-
-                    <div class="cards-container">
-                        <div class="cards-list" id="cardsList"></div>
-                    </div>
-
-                    <button id="newCardBtn" class="btn btn-primary">+ New Card</button>
-                </div>
 
                 <!-- Study Mode -->
                 <div id="studyMode" class="study-mode" hidden>
@@ -84,35 +54,6 @@
                 </div>
             </section>
         </main>
-
-        <!-- Modal: Create/Edit Deck -->
-        <!-- <dialog id="deckModal" class="modal">
-            <div class="modal-content">
-                <h3 id="deckModalTitle">New Deck</h3>
-                <label for="deckNameInput">Deck Name:</label>
-                <input type="text" id="deckNameInput" placeholder="Enter deck name" required>
-                <div class="modal-actions">
-                    <button id="saveDeckBtn" class="btn btn-primary">Save</button>
-                    <button id="cancelDeckBtn" class="btn btn-secondary">Cancel</button>
-                </div>
-            </div>
-        </dialog> -->
-
-        <!-- Modal: Create/Edit Card -->
-        <!-- <dialog id="cardModal" class="modal">
-            <div class="modal-content">
-                <h3 id="cardModalTitle">New Card</h3>
-                <label for="cardFrontInput">Front:</label>
-                <textarea id="cardFrontInput" placeholder="Enter front text" required></textarea>
-                <label for="cardBackInput">Back:</label>
-                <textarea id="cardBackInput" placeholder="Enter back text" required></textarea>
-                <div class="modal-actions">
-                    <button id="saveCardBtn" class="btn btn-primary">Save</button>
-                    <button id="cancelCardBtn" class="btn btn-secondary">Cancel</button>
-                </div>
-            </div>
-        </dialog>
-    </div> -->
 </body>
 
 </html>
