@@ -11,7 +11,7 @@ newDeckBtn.addEventListener('click', () => {
             <span class="close">&times;</span>
             <h2>Create New Deck</h2>
             <input type="text" id="deckNameInput" placeholder="Enter deck name">
-            <button id="createDeckBtn">Create</button>
+            <button id="createDeckBtn" aria-label="Create Deck">Create</button>
         </div>
     `;
     document.body.appendChild(newDeckName);
@@ -34,10 +34,10 @@ newDeckBtn.addEventListener('click', () => {
                             <p id="deckCardCount" class="card-count"></p>
                         </div>
                         <div class="deck-actions">
-                            <button id="editDeckBtn">Edit</button>
-                            <button id="studyBtn">Study</button>
-                            <button id="deleteDeckBtn">Delete</button>
-                            <button id="newCardBtn">+ New Card</button>
+                            <button id="editDeckBtn" aria-label="Edit Deck">Edit</button>
+                            <button id="studyBtn" aria-label="Study Deck">Study</button>
+                            <button id="deleteDeckBtn" aria-label="Delete Deck">Delete</button>
+                            <button id="newCardBtn" aria-label="New Card">+ New Card</button>
                         </div>
                     </div>
                 </div>`;
